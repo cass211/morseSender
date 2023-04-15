@@ -4,8 +4,14 @@
 # https://people.csail.mit.edu/hubert/pyaudio/#examples
 
 import pyaudio
-import wave
 import sys
+import numpy as np
+
+waveform = np.sin
+wavetable_length = 64
+wave_table = np.zeros((wavetable_length,))
+for n in range(wavetable_length):
+    wave_table[n] = waveform(2 * np.pi * n / wavetable_length)
 
 #CHUNK = 1024
 
