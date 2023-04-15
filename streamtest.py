@@ -36,10 +36,10 @@ stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
 #    stream.write(data)
 #    data = wf.readframes(CHUNK)
 
-for n in total_samples:
-    stream.write(wave_table[int(np.floor(index))])
-    index += indexIncrement
-    index %= wavetable_length
+#for n in total_samples:
+#    stream.write(wave_table[int(np.floor(index))])
+#    index += indexIncrement
+#    index %= wavetable_length
 
 stream.stop_stream()
 stream.close()
