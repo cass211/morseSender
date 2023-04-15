@@ -7,13 +7,15 @@ import pyaudio
 import wave
 import sys
 
-CHUNK = 1024
+#CHUNK = 1024
 
 if len(sys.argv) < 2:
     print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
     sys.exit(-1)
 
-wf = wave.open(sys.argv[1], 'rb')
+total_samples = round(t * sample_rate)
+
+#wf = wave.open(sys.argv[1], 'rb')
 
 p = pyaudio.PyAudio()
 
@@ -22,11 +24,16 @@ stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
                 rate=wf.getframerate(),
                 output=True)
 
-data = wf.readframes(CHUNK)
+#data = wf.readframes(CHUNK)
 
-while data != '':
-    stream.write(data)
-    data = wf.readframes(CHUNK)
+#while data != '':
+#    stream.write(data)
+#    data = wf.readframes(CHUNK)
+
+for n in total_samples:
+    stream.write(wave_table[int(np.floor(index))])
+    index += indexIncrement
+    index %= wavetable_length
 
 stream.stop_stream()
 stream.close()
