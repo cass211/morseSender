@@ -19,7 +19,7 @@ for n in range(wavetable_length):
 #    print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
 #    sys.exit(-1)
 
-total_samples = round(t * sample_rate)
+#total_samples = round(t * sample_rate)
 
 #wf = wave.open(sys.argv[1], 'rb')
 
